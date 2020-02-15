@@ -23,11 +23,12 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/")
 public class CustomerController {
+
     @Autowired
     private CustomerService CustomerBusinessService;
 
     @RequestMapping(method = RequestMethod.POST, path = "/customer/signup", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-    public ResponseEntity<SignupCustomerResponse> customerSignup(final SignupCustomerRequest signupUserRequest) throws SignUpRestrictedException, SignUpRestrictedException {
+    public ResponseEntity<SignupCustomerResponse> customerSignup(final SignupCustomerRequest signupUserRequest) throws SignUpRestrictedException {
 
         final CustomerEntity custEntity = new CustomerEntity();
 

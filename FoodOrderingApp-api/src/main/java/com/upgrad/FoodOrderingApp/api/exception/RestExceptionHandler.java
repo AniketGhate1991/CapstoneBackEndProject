@@ -40,6 +40,20 @@ public class RestExceptionHandler {
         );
     }
 
+    @ExceptionHandler(SaveAddressException.class)
+    public ResponseEntity<ErrorResponse> saveAddressFailedException(SaveAddressException exe, WebRequest request) {
+        return new ResponseEntity<ErrorResponse>(
+                new ErrorResponse().code(exe.getCode()).message(exe.getErrorMessage()), HttpStatus.FORBIDDEN
+        );
+    }
+
+    @ExceptionHandler(AddressNotFoundException.class)
+    public ResponseEntity<ErrorResponse> AddressNotFoundFailedException(AddressNotFoundException exe, WebRequest request) {
+        return new ResponseEntity<ErrorResponse>(
+                new ErrorResponse().code(exe.getCode()).message(exe.getErrorMessage()), HttpStatus.FORBIDDEN
+        );
+    }
+
 
 
 

@@ -22,14 +22,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-
 public class CustomerService {
     @Autowired
     private CustomerDao customerDao;
 
     @Autowired
     private PasswordCryptographyProvider passwordCryptographyProvider;
-
 
     @Transactional(propagation = Propagation.REQUIRED)
     public CustomerEntity signup(CustomerEntity customerEntity) throws SignUpRestrictedException {
