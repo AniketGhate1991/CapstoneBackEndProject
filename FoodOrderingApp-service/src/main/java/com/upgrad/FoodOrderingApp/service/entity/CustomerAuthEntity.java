@@ -11,7 +11,11 @@ import java.time.ZonedDateTime;
 @Entity
 @Table(name = "customer_auth")
 @NamedQueries(
-        @NamedQuery(name = "customerByAccessToken", query = "select ce from CustomerAuthEntity ce where ce.accessToken =:accessToken")
+        {
+                @NamedQuery(name = "customerByAccessToken", query = "select ce from CustomerAuthEntity ce where ce.accessToken =:accessToken")
+
+
+        }
 )
 public class CustomerAuthEntity {
     @Id
@@ -97,4 +101,6 @@ public class CustomerAuthEntity {
     public void setExpiresAt(ZonedDateTime expiresAt) {
         this.expiresAt = expiresAt;
     }
+
+
 }
