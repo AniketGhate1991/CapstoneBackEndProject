@@ -72,9 +72,6 @@ public class RestaurantService {
         return restaurantEntities;
     }
 
-
-
-
     public RestaurantEntity getRestaurantByRestaurantId(String restaurantId) throws RestaurantNotFoundException {
         if(restaurantId == null)
         {
@@ -112,9 +109,6 @@ public class RestaurantService {
 
         return categoryItemEntity;
     }
-
-
-
 
     @Transactional(propagation = Propagation.REQUIRED)
     public RestaurantEntity updateRestaurantRating(RestaurantEntity restaurantEntity, Double cu) throws AuthorizationFailedException, RestaurantNotFoundException, InvalidRatingException {

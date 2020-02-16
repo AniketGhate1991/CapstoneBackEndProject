@@ -41,6 +41,7 @@ public class CategoryController {
             categoryListResponse.add(new CategoryListResponse().id(UUID.fromString(ce.getUuid())).categoryName(ce.getCategoryName())
             );
         }
+
         if(!categoryListResponse.isEmpty())
             categoriesListResponse = new CategoriesListResponse().categories(categoryListResponse);
 
